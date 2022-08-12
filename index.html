@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Exoplanet CC Science NFT Service</title>
+  </head>
+  <body>
+    <div id="app">
+      <vc-viewer>
+        <vc-entity
+          :billboard="billboard"
+          :position="{ lng: 108, lat: 32 }"
+          :point="point"
+          :label="label"
+          @click="onEntityEvt"
+          @mouseover="onEntityEvt"
+          @mouseout="onEntityEvt"
+        >
+          <vc-graphics-rectangle
+            :coordinates="[130, 20, 80, 25]"
+            material="green"
+          />
+        </vc-entity>
+        <vc-layer-imagery>
+          <vc-imagery-provider-osm />
+        </vc-layer-imagery>
+        <vc-navigation :other-opts="false" />
+      </vc-viewer>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/vue-cesium@next/dist/index.css">
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/vue-cesium@next"></script>
+    <script>
+      var global = globalThis
+    </script>
+    <script>
+      console.log(VueCesium)
+      const App = {
+        data() {
+          return {
+            point: {
+              pixelSize: 28,
+              color: 'red',
+            },
+            label: {
+              text: 'Exoworlds.CC',
+              pixelOffset: [0, 80],
+              fillColor: 'red',
+            },
+            billboard: {
+              image: 'https://ecocommunity-dao.github.io/htdocs/img/ottercoin000.gif',
+              scale: 1.0,
+            }
+          };
+        },
+        methods: {
+          onEntityEvt (e) {
+            if (e.type === 'onmouseover') {
+              this.billboard = {
+                image: 'https://ecocommunity-dao.github.io/htdocs/img/ottercoin000.gif',
+                scale: 0.6
+              }
+            } else if (e.type === 'onmouseout') {
+              this.billboard = {
+                image: 'https://ecocommunity-dao.github.io/htdocs/img/ottercoin000.gif',
+                scale: 0.5
+              }
+            }
+          }
+        }
+      };
+      const app = Vue.createApp(App);
+      app.use(VueCesium);
+      app.mount("#app");
+    </script>
+  </body>
+</html>
