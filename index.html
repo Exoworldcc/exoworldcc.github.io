@@ -10,7 +10,7 @@
       <vc-viewer>
         <vc-entity
           :billboard="billboard"
-          :position="{ lng: 108, lat: 32 }"
+          :position="{ lng: 125, lat: 40 }"
           :point="point"
           :label="label"
           @click="onEntityEvt"
@@ -18,8 +18,8 @@
           @mouseout="onEntityEvt"
         >
           <vc-graphics-rectangle
-            :coordinates="[130, 20, 80, 25]"
-            material="green"
+            :coordinates="[13, 20, 70, 12]"
+            material="orange"
           />
         </vc-entity>
         <vc-layer-imagery>
@@ -49,7 +49,7 @@
             label: {
               text: 'Exoworlds.CC',
               pixelOffset: [0, 80],
-              fillColor: 'red',
+              fillColor: 'green',
             },
             billboard: {
               image: 'https://ecocommunity-dao.github.io/htdocs/img/ottercoin000.gif',
