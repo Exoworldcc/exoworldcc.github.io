@@ -3,98 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Earth Care Powered Sustainaverse</title>
-    <style>
-      body {
-  background: #F8FFE5;
-}
-.perspective {
-	perspective: 76em;
-	perspective-origin: 50% 50px;
-  width: 494px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-  color: #fff;
-  text-align: center;
-}
-input {
-  display: none;
-}
-.tab {
-  position: absolute;
-  width: 80px;
-  height: 70px;
-  background: pink;
-  right: 0;
-  line-height: 70px;
-  font-weight: 300;
-  
-  &:nth-child(1) { 
-    top: -5px;
-    background: #06D6A0;
-  }
-  &:nth-child(2) {
-    top: 69px;
-    background: #1B9AAA;
-  }
-  &:nth-child(3) {
-    top: 143px;
-    background: #EF476F;
-  }
-}
+    <title>EXOWORLD CC - - Earth Community Care Powered Sustainaverse</title>
 
-.cube {
-  position: relative;
-  margin: 60px auto 0;
-  width: 300px;
-  height: 200px;
-  transform-origin: 0 100px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease-in;
-}
-.tab-content {
-  width: 300px;
-  height: 200px;
-  position: absolute;
-  
-  h1 {
-    font-size: 25px;
-    margin: 75px 0 10px;
-    font-weight: 300;
-  }
-  p {
-    font-size: 12px;
-  }
-  &:nth-child(2) {
-    transform: translateZ(100px);
-    background: #1B9AAA;
-  }
-  &:nth-child(1) {
-    transform: rotateX(-270deg)
-               translateY(-100px);
-    transform-origin: top left;
-    background: #06D6A0;
-  }
-  &:nth-child(3) {
-    transform: rotateX(-90deg)
-               translateY(100px);
-    transform-origin: bottom center;
-    background: #EF476F;
-  } 
-}
-
-#tab-top:checked ~ .cube {
-  transform: rotateX(-90deg);
-}
-#tab-front:checked ~ .cube {
-  transform: rotateX(0deg);
-}
-#tab-bottom:checked ~ .cube {
-  transform: rotateX(90deg);
-}
-
-    </style>
   </head>
   <body>
     <div id="app">
@@ -115,33 +25,6 @@ input {
         <vc-navigation :other-opts="false" />
       </vc-viewer>
       
-      <div class="perspective">
-
-  <label class="tab" for="tab-top">PLASKIT</label>
-  <label class="tab" for="tab-front">COMPOST</label>
-  <label class="tab" for="tab-bottom">SHAMBA</label>
-  <input type="radio" name="tabs" id="tab-top">
-  <input type="radio" name="tabs" id="tab-front">
-  <input type="radio" name="tabs" id="tab-bottom"> 
-
-  <div class="cube">
-    <div class="tab-content">
-      <h1>TOP CONTENT</h1>
-      <p>THIS IS AWESOME</p>
-    </div>
-     <div class="tab-content">
-      <h1>FRONT CONTENT</h1>
-      <p>THIS IS COOL</p>
-    </div>
-    <div class="tab-content">
-      <h1>BOTTOM CONTENT</h1>
-      <p>THIS IS SWEET</p>
-    </div>
-  </div>
-</div>
-      
-      
-    </div>
 
     <script src="https://unpkg.com/vue@next"></script>
     <!-- import CSS -->
